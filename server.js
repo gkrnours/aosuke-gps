@@ -2,16 +2,9 @@
  * Module dependencies.
  */
 
-var fs = require("fs")
-var util = require("util")
-util.log(__dirname)
-util.log(fs.readdirSync(__dirname))
 var express = require("express")
 var template= require("consolidate")
-var routes  = {index: function(req, res){ 
-		res.render('index', {title:"Express"}) 
-	} 
-}
+var routes  = require("./routes.js")
 var http = require("http")
 
 var app = express()
