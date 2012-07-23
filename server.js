@@ -2,6 +2,8 @@
  * Module dependencies.
  */
 
+console.log(fs)
+console.log(path)
 var express = require("express")
 var template= require("consolidate")
 var routes  = require(__dirname+"routes.js")
