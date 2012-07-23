@@ -3,7 +3,9 @@
  */
 
 var fs = require("fs")
-console.log(fs.readdir(__dirname))
+var util = require("util")
+util.log(__dirname)
+util.log(fs.readdirSync(__dirname))
 var express = require("express")
 var template= require("consolidate")
 var routes  = {index: function(req, res){ 
