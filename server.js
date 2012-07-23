@@ -4,10 +4,10 @@
 
 require.paths.push(".")
 console.log(require.paths)
-console.log(typeof(path))
+console.log(typeof(paths))
 var express = require("express")
 var template= require("consolidate")
-var routes  = require("./routes.js")
+var routes  = require("routes.js")
 var http = require("http")
 
 var app = express()
