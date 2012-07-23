@@ -2,10 +2,11 @@
  * Module dependencies.
  */
 
+console.log(require.paths)
 var express = require("express")
 var template= require("consolidate")
 var routes  = require("./routes.js")
-var http = require('http')
+var http = require("http")
 
 var app = express()
 var views_dir = __dirname+"/data/views"
