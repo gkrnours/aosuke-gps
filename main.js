@@ -3,6 +3,6 @@ this.home = function(req, res){
 	res.render("index", {})
 }
 
-this.log = function(req, res){
+this.login = function(req, res){
 	res.render("index", {})
 }
