@@ -2,8 +2,8 @@
  * Module dependencies.
  */
 
+require.paths.push(".")
 console.log(require.paths)
-console.log(typeof(fs))
 var express = require("express")
 var template= require("consolidate")
 //var routes  = require("./routes.js")
