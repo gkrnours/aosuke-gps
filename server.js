@@ -32,8 +32,7 @@ app.configure('development', function(){
 	app.use(express.errorHandler());
 });
 
-routes.setup()
-app.get('/', routes.index);
+routes.setup(app)
 
 http.createServer(app).listen(process.env["port"] || 3000, function() {
 	console.log("Express server listening on port " + app.get('port'));

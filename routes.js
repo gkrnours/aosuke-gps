@@ -3,11 +3,9 @@
  * GET home page.
  */
 
-var express = require("express")
 var main = require("./main.js")
-var app = express()
 
-this.setup = function setup(){
+this.setup = function setup(app){
 	app.get("/", main.home)
 	app.post("/log", main.login)
 }
