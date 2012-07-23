@@ -2,6 +2,7 @@
  * Module dependencies.
  */
 
+console.log(__dirname)
 var express = require("express")
 var template= require("consolidate")
 var routes  = {index: function(req, res){ 
