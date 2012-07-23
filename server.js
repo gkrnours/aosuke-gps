@@ -2,8 +2,8 @@
  * Module dependencies.
  */
 
-console.log(__dirname)
 var fs = require("fs")
+util.log(fs.readdir(__dirname))
 var express = require("express")
 var template= require("consolidate")
 var routes  = {index: function(req, res){ 
