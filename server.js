@@ -2,9 +2,9 @@
  * Module dependencies.
  */
 
-var express = require('express')
-var template= require('consolidate')
-var routes  = require('routes.js')
+var express = require("express")
+var template= require("consolidate")
+var routes  = require("./routes.js")
 var http = require('http')
 
 var app = express()
