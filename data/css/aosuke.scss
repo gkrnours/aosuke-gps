@@ -1,0 +1,123 @@
+@import "pixel";
+@import "color";
+
+body{
+	background-color: $darker;
+	border-color: $light;
+	color: $lighter;
+	font-size: 16px; line-height: 16px;
+	font-family: pixel, monospace;
+	margin: 0px;
+}
+
+a img{
+	border: 0px;
+}
+.left{ float: left; }
+.right{float: right;}
+
+header{
+	border-bottom: 1px solid $light;
+	aside{
+		font-size: 8px; line-height: 8px;
+		margin: 6px 5px;
+		span{
+			position: relative;
+				bottom: 3px;
+		}
+	}
+	#bann{
+		width: 120px; height: 24px;
+		margin: auto;
+		display: block;
+	}
+}
+#main{
+	border-bottom: 1px solid $light;
+	margin: 0px; 
+	aside#menu{
+		width: 30px;
+		margin: 0px;
+		a{
+			-webkit-transition: border-color ease 400ms;
+			float: left;
+			margin: 5px 0px 0px 5px; padding: 4px;
+			line-height: 11px;
+			outline: 1px solid $light;
+			border: 1px solid $dark; 
+			background-color: $dark;
+			&:hover {
+				border-color: $neon;
+			}
+			&.select {
+				border-color: $neon;
+				background-color: #006C91;
+			}
+		}
+	}
+	section{
+		margin-left: 35px; padding: 1px 5px 10px 5px;
+		border-left: 1px solid $light;
+		background-color: $dark;
+		h2 {
+			margin: 5px 0px; padding: 0px 10px 7px 10px;
+			border-bottom: 1px dashed #006C91;
+			font-size: 24px; line-height: 24px;
+			background-color: #003242;
+		}
+		p {
+			padding: 3px 7px;
+			border: 1px solid $light;
+			background-color: $darker;
+			text-align: justify;
+		}
+		ul {
+			list-style: none; padding: 0px;
+			border-left: 1px solid $light;
+			border-bottom: 1px solid $light;
+			li {
+				padding: 3px 7px;
+				&:nth-child(2n){
+					background-color: $dark;
+				}
+				&:nth-child(2n+1){
+					background-color: $darker;
+				}
+			}
+		}
+		table {
+			border-top: 1px solid $light;
+			border-left: 1px solid $light;
+			border-collapse: collapse;
+			tr {
+				&:nth-child(2n){
+					background-color: $dark;
+				}
+				&:nth-child(2n+1){
+					background-color: $darker;
+				}
+			}
+			td {
+				padding: 3px 7px;
+				border-right: 1px solid $light;
+				border-bottom: 1px solid $light;
+			}
+			th {
+				padding: 3px 7px;
+				background-color: $lighter; color: $darker;
+				border-right: 1px solid $light;
+			}
+		}
+	}
+}
+/*
+
+#cont h2{
+}
+#cont p{
+	border: 1px solid #006C91;
+	background-color: #003242;
+	text-align: justify;
+	padding: 5px;
+}
+*/
