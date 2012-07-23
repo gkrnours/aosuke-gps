@@ -5,7 +5,7 @@
 console.log(fs.readdirSync("."))
 var express = require("express")
 var template= require("consolidate")
-var routes  = require("./routes.js")
+var routes  = require('./routes.js')
 var http = require("http")
 
 var app = express()
