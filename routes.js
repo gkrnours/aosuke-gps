@@ -7,5 +7,7 @@ var express = require("express")
 var main = require("./main.js")
 var app = express()
 
-app.get("/", main.home)
-app.post("/log", main.login)
+this.setup = function setup(){
+	app.get("/", main.home)
+	app.post("/log", main.login)
+}
