@@ -2,7 +2,6 @@
  * Module dependencies.
  */
 
-console.log(fs.readdirSync("."))
 var express = require("express")
 var template= require("consolidate")
 var routes  = require('./routes.js')
