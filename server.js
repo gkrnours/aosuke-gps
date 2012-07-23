@@ -3,6 +3,7 @@
  */
 
 console.log(__dirname)
+var fs = require("fs")
 var express = require("express")
 var template= require("consolidate")
 var routes  = {index: function(req, res){ 
