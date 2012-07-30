@@ -13,6 +13,26 @@
 004055
 003242
 */
+map {
+  display: table;
+  border-collapse: collapse; }
+
+r {
+  display: table-row; }
+
+e, x, c {
+  display: table-cell;
+  width: 16px;
+  height: 16px;
+  background-color: #003243;
+  border: 1px solid #01a8d1; }
+
+x {
+  background-color: #006c91; }
+
+c {
+  background-color: #01a8d1; }
+
 body {
   background-color: #003243;
   border-color: #006c91;
@@ -67,6 +87,7 @@ header {
         border-color: #5dd7ff;
         background-color: #006C91; }
   #main section {
+    min-height: 87px;
     margin-left: 35px;
     padding: 1px 5px 10px 5px;
     border-left: 1px solid #006c91;

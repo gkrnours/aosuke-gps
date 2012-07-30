@@ -2,31 +2,32 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>{%block title%}Aosuke GPS System{%endblock%}
 		{%block post_title%}{%endblock%}</title>
-	<link rel="StyleSheet" href="css/aosuke.css"/>
+	<link rel="StyleSheet" href="/css/aosuke.css"/>
 	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
 	<header>
 		<aside class="left">
-			<img src="img/battery_charging.gif" />
+			<img src="/img/battery_charging.gif" />
 			<span>{{name}}</span>
 		</aside>
 		<aside class="right">
 			<span>{{now|date("H:i")}}</span>
-			<img src="img/network_3.gif" />
+			<img src="/img/network_3.gif" />
 		</aside>
 		<a href="/" id="bann">
-			<img src="img/bann.gif" alt="Bannière"/>
+			<img src="/img/bann.gif" alt="Bannière"/>
 		</a>
 	</header>
 
 	<div id="main">
 		<aside id="menu">
-			<a class="{{select.map}}" href="/map"><img src="img/map.gif" /></a>
-			<a class="{{select.ppl}}" href="/people"><img src="img/ppl.gif" /></a>
-			<a class="{{select.wld}}" href="/world"><img src="img/world.gif" /></a>
+			<a class="{{select.map}}" href="/map"><img src="/img/map.gif" /></a>
+			<a class="{{select.ppl}}" href="/people"><img src="/img/ppl.gif" /></a>
+			<a class="{{select.wld}}" href="/world"><img src="/img/world.gif" /></a>
 		</aside>
 		<section>
 		{%block main%}

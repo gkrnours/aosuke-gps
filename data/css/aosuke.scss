@@ -1,5 +1,6 @@
 @import "pixel";
 @import "color";
+@import "map";
 
 body{
 	background-color: $darker;
@@ -56,6 +57,7 @@ header{
 		}
 	}
 	section{
+		min-height: 87px;
 		margin-left: 35px; padding: 1px 5px 10px 5px;
 		border-left: 1px solid $light;
 		background-color: $dark;

@@ -1,0 +1,20 @@
+map{
+	display: table;
+	border-collapse: collapse;
+}
+r{
+	display: table-row;
+}
+e, x, c{
+	display: table-cell;
+	width: 16px; height: 16px;
+	background-color: $darker;
+	border: 1px solid $lighter;
+}
+x{
+	background-color: $light;
+}
+c{
+	background-color: $lighter;
+}
+
