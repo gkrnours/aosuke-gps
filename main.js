@@ -39,11 +39,20 @@ this.log = {
 			uid: req.flux.headers.owner.citizen["@"].id,
 			name:req.flux.headers.owner.citizen["@"].name
 		}
+		req.session.city = {
+			name: req.flux.data.city["@"].city,
+			cid: req.flux.headers.game["@"].id,
+			x: req.flux.data.city["@"].x,
+			y: req.flux.data.city["@"].y
+		}
+		r.mset(util.process(req.flux), util.K)
+
 		if(req.body.dbg){
 			res.send([
 					req.flux.headers.owner.myZone,
 					req.flux.headers.game["@"],
-					req.flux.data.map
+					req.flux.data.city["@"],
+					//req.flux.data.map
 					])
 		}else{
 			res.redirect("/")

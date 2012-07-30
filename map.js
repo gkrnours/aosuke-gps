@@ -6,7 +6,6 @@ var s = require("./secret.js")
 var p = new x2js.Parser()
 var r = new redis.createClient()
 
-
 this.fetch =  function(req, res, next) {
 	id = req.params.id
 	if(!id) next()

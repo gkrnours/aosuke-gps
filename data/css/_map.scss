@@ -5,11 +5,25 @@ map{
 r{
 	display: table-row;
 }
-e, x, c{
+e, v, t, x, c, h{
 	display: table-cell;
 	width: 16px; height: 16px;
-	background-color: $darker;
 	border: 1px solid $lighter;
+}
+h{
+	font-size: 8px; text-align: center;
+	border: none;
+}
+e{
+	background-color: $darker;
+	background-image: url("/img/bg_unknown.gif");
+}
+v{
+	background-color: $darker;
+	background-image: url("/img/bg_visited.gif");
+}
+t{
+	background-color: $dark;
 }
 x{
 	background-color: $light;

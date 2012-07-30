@@ -20,12 +20,27 @@ map {
 r {
   display: table-row; }
 
-e, x, c {
+e, v, t, x, c, h {
   display: table-cell;
   width: 16px;
   height: 16px;
-  background-color: #003243;
   border: 1px solid #01a8d1; }
+
+h {
+  font-size: 8px;
+  text-align: center;
+  border: none; }
+
+e {
+  background-color: #003243;
+  background-image: url("/img/bg_unknown.gif"); }
+
+v {
+  background-color: #003243;
+  background-image: url("/img/bg_visited.gif"); }
+
+t {
+  background-color: #004055; }
 
 x {
   background-color: #006c91; }
