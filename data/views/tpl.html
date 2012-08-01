@@ -29,8 +29,9 @@
 			<a class="{{select.ppl}}" href="/people"><img src="/img/ppl.gif" /></a>
 			<a class="{{select.wld}}" href="/world"><img src="/img/world.gif" /></a>
 		</aside>
-		<section>
-		{%block main%}
+		<section>{%if error%}
+		<p class="error">{{error}}</p>
+		{%endif error%}{%block main%}
 			<h2>Work In Progress</h2>
 			<p>Aosuke GPS System est actuellement distribué en tant que version de démonstration. Certaines fonctionnalité n'ont pas encore atteint un niveau de maturité suffisent pour etre distribué au publique.</p>
 			<ul>
@@ -45,8 +46,7 @@
 				<tr><td>deeldo</td><td>3 Def</td></tr>
 				<tr><td>gkr</td><td>1 Def</td></tr>
 			</table>
-		{%endblock%}
-		</section>
+		{%endblock%}</section>
 	</div>
 </body>
 </html>

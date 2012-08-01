@@ -15,6 +15,8 @@
 */
 map {
   display: table;
+  font-size: 8px;
+  text-align: center;
   border-collapse: collapse; }
 
 r {
@@ -24,11 +26,9 @@ e, v, t, x, c, h {
   display: table-cell;
   width: 16px;
   height: 16px;
-  border: 1px solid #01a8d1; }
+  border: 1px solid #006c91; }
 
 h {
-  font-size: 8px;
-  text-align: center;
   border: none; }
 
 e {
@@ -114,11 +114,20 @@ header {
       font-size: 24px;
       line-height: 24px;
       background-color: #003242; }
-    #main section p {
+    #main section p, #main section pre, #main section form {
       padding: 3px 7px;
       border: 1px solid #006c91;
       background-color: #003243;
       text-align: justify; }
+      #main section p.error, #main section pre.error, #main section form.error {
+        margin: 5px 0px;
+        padding: 7px 20px;
+        display: inline-block;
+        border: 3px dashed #5dd7ff; }
+        #main section p.error.error:before, #main section pre.error.error:before, #main section form.error.error:before {
+          content: "Erreur: "; }
+    #main section form {
+      padding: 15px 7px; }
     #main section ul {
       list-style: none;
       padding: 0px;
@@ -147,15 +156,3 @@ header {
         background-color: #01a8d1;
         color: #003243;
         border-right: 1px solid #006c91; }
-
-/*
-
-#cont h2{
-}
-#cont p{
-	border: 1px solid #006C91;
-	background-color: #003242;
-	text-align: justify;
-	padding: 5px;
-}
-*/

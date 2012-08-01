@@ -1,0 +1,9 @@
+{% extends "tpl.html" %}
+
+{% block main %}
+			<h2>Error 500: {{err.message}}</h2>
+			<pre>
+				{{err.stack}}
+			</pre>
+{% endblock main %}
+

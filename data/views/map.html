@@ -3,6 +3,11 @@
 {% block main %}
 			<h2>{{city.name}}</h2>
 			<map>
+				{% for row in map %}
+				<r>{%for c in row%}<{{c.type}}></{{c.type}}>{%endfor%}</r>
+				{%endfor%}
+			</map>
+			<map>
 				<r><h>  </h><h>-2</h><h>-1</h><h>0</h><h>1</h></r>
 				<r><h>-1</h><e>  </e><v>  </v><v> </v><e> </e></r>
 				<r><h> 0</h><e>  </e><t>  </t><c> </c><e> </e></r>

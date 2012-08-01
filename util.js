@@ -1,7 +1,11 @@
+var err_txt = {}
+	err_txt.not_in_game = "Pas de réseau. Veuillez acceder a un lieu habité."
+	err_txt.horde_attacking = "L'attaque perturbe les communications."
+
 this.K = function(){}
 
 this.process = function(flux){
-	var city = flux.headers["@"]
+	var city = flux.headers.game["@"]
 	var zone = flux.headers.owner.myZone
 	var cpos = [flux.data.city["@"].x, flux.data.city["@"].y]
 	var fmap  = flux.data.map
@@ -20,11 +24,13 @@ this.process = function(flux){
 		payload.push(city.id+":"+local.x+"_"+local.y+":danger")
 		payload.push(local.danger)
 		payload.push(city.id+":"+local.x+"_"+local.y+":type")
+
 		if(local.x == cpos[0] && local.y == cpos[1]){
 			payload.push("c")
 		} else if(typeof(building) == "undefined"){
+			console.log(local)
 			if(local.nvt == 0){
-				payload.push("e")
+				payload.push("t")
 			} else {
 				payload.push("v")
 			}
@@ -44,9 +50,13 @@ this.mk_tpl_val = function mk_tpl_val(req){
 		else
 			tpl_val.me = {name: "Invité"}
 		if(req.session.city)
-			tpl_cal.city = req.session.city
+			tpl_val.city = req.session.city
 		else
 			tpl_val.city = {name: "Ancienne Cité Oubliée"}
+	}
+	if(req && req.query){
+		if(req.query.e)
+			tpl_val.error = err_txt[req.query.e] || req.query.e
 	}
 	return tpl_val
 }

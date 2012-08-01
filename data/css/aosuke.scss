@@ -67,11 +67,22 @@ header{
 			font-size: 24px; line-height: 24px;
 			background-color: #003242;
 		}
-		p {
+		p, pre, form {
 			padding: 3px 7px;
 			border: 1px solid $light;
 			background-color: $darker;
 			text-align: justify;
+			&.error{
+				&.error:before{
+					content: "Erreur: "
+				}
+				margin: 5px 0px; padding: 7px 20px;
+				display: inline-block;
+				border: 3px dashed $neon;
+			}
+		}
+		form{
+			padding: 15px 7px;
 		}
 		ul {
 			list-style: none; padding: 0px;
@@ -112,14 +123,3 @@ header{
 		}
 	}
 }
-/*
-
-#cont h2{
-}
-#cont p{
-	border: 1px solid #006C91;
-	background-color: #003242;
-	text-align: justify;
-	padding: 5px;
-}
-*/

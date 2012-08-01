@@ -4,6 +4,7 @@
 
 var express = require("express")
 var template= require("consolidate")
+var rsStore = require("connect-redis")(express)
 var routes  = require("./routes.js")
 var http = require("http")
 
@@ -26,8 +27,11 @@ app.configure(function(){
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
 	app.use(express.cookieParser("cherry pie"));
-	app.use(express.session({secret:"cherry pie"}));
+	app.use(express.session({store: new rsStore(), secret:"cherry pie",
+								cookie: {maxAge: 180*1000}}));
 	app.use(app.router);
+	app.use(routes.err.gotcha) // check if the error is known
+	app.use(routes.err.generic)// throw pretty error at the user
 });
 
 app.configure('development', function(){

@@ -1,5 +1,6 @@
 map{
 	display: table;
+	font-size: 8px; text-align: center;
 	border-collapse: collapse;
 }
 r{
@@ -8,10 +9,9 @@ r{
 e, v, t, x, c, h{
 	display: table-cell;
 	width: 16px; height: 16px;
-	border: 1px solid $lighter;
+	border: 1px solid $light;
 }
 h{
-	font-size: 8px; text-align: center;
 	border: none;
 }
 e{
