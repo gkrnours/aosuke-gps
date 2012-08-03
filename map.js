@@ -16,6 +16,7 @@ function delayRender(res, req, tpl_val){
 function workerMap(req, tpl_val, next){
 	req._cellDone = 0
 	r.get(req.id+":city:name", function(err, rep){
+		console.log(req.id)
 		tpl_val.city = {name: rep}
 	})
 	r.mget([req.id+":city:w", req.id+":city:h"], function(err, rep){

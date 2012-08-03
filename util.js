@@ -42,7 +42,7 @@ this.process = function(flux){
 	payload.push(id+":city:h")
 	payload.push(fmap["@"].hei)
 	payload.push(id+":city:name")
-	payload.push(city.name)
+	payload.push(city.city)
 	return payload
 }
  
