@@ -5,9 +5,10 @@ var err_txt = {}
 this.K = function(){}
 
 this.process = function(flux){
-	var city = flux.headers.game["@"]
+	var id = flux.headers.game["@"].id
 	var zone = flux.headers.owner.myZone
 	var cpos = [flux.data.city["@"].x, flux.data.city["@"].y]
+	var city  = flux.data.city["@"]
 	var fmap  = flux.data.map
 
 	var payload = []
@@ -17,14 +18,14 @@ this.process = function(flux){
 		var local = fmap.zone[i]["@"]
 		var building = fmap.zone[i].building
 		if(local.nvt == 0){
-			payload.push(city.id+":"+local.x+"_"+local.y+":last")
-			payload.push(city.days)
+			payload.push(id+":"+local.x+"_"+local.y+":last")
+			payload.push(flux.headers.game["@"].days)
 		}
-		payload.push(city.id+":"+local.x+"_"+local.y+":tag")
+		payload.push(id+":"+local.x+"_"+local.y+":tag")
 		payload.push(local.tag)
-		payload.push(city.id+":"+local.x+"_"+local.y+":danger")
+		payload.push(id+":"+local.x+"_"+local.y+":danger")
 		payload.push(local.danger)
-		payload.push(city.id+":"+local.x+"_"+local.y+":type")
+		payload.push(id+":"+local.x+"_"+local.y+":type")
 		if(local.x == cpos[0] && local.y == cpos[1])
 			payload.push("c")
 		else if(typeof(building) == "undefined")
@@ -32,14 +33,16 @@ this.process = function(flux){
 		else
 			payload.push("x")
 	}
-	payload.push(city.id+":city:x")
+	payload.push(id+":city:x")
 	payload.push(cpos[0])
-	payload.push(city.id+":city:y")
+	payload.push(id+":city:y")
 	payload.push(cpos[1])
-	payload.push(city.id+":city:w")
+	payload.push(id+":city:w")
 	payload.push(fmap["@"].wid)
-	payload.push(city.id+":city:h")
+	payload.push(id+":city:h")
 	payload.push(fmap["@"].hei)
+	payload.push(id+":city:name")
+	payload.push(city.name)
 	return payload
 }
  
