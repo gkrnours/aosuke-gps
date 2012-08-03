@@ -1,0 +1,31 @@
+form{
+	label{
+		display: block;
+		margin: 3px 0px;
+	}
+	input{
+		display: block;
+		margin:3px 15px;
+		&[type="text"]{
+			color: $lighter;
+			background-color: $dark;
+			border: 2px solid $light;
+			&:focus{
+				outline: 1px solid$neon;
+			}
+		}
+		&[type="submit"],
+		&[type="reset"],
+		&[type="button"]{
+			color: $darker;
+			background-color: $light;
+			border: 2px outset $lighter;
+			&:hover, &:focus{
+				background-color: $lighter;
+			}
+			&:active{
+				border-style: inset;
+			}
+		}
+	}
+}

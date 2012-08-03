@@ -12,6 +12,7 @@ this.process = function(flux){
 
 	var payload = []
 	var l=fmap.zone.length
+
 	for(i=0; i<l; ++i){
 		var local = fmap.zone[i]["@"]
 		var building = fmap.zone[i].building
@@ -24,20 +25,17 @@ this.process = function(flux){
 		payload.push(city.id+":"+local.x+"_"+local.y+":danger")
 		payload.push(local.danger)
 		payload.push(city.id+":"+local.x+"_"+local.y+":type")
-
-		if(local.x == cpos[0] && local.y == cpos[1]){
+		if(local.x == cpos[0] && local.y == cpos[1])
 			payload.push("c")
-		} else if(typeof(building) == "undefined"){
-			console.log(local)
-			if(local.nvt == 0){
-				payload.push("t")
-			} else {
-				payload.push("v")
-			}
-		} else {
+		else if(typeof(building) == "undefined")
+			payload.push((local.nvt == 0)?"t":"v")
+		else
 			payload.push("x")
-		}
 	}
+	payload.push(city.id+":city:x")
+	payload.push(cpos[0])
+	payload.push(city.id+":city:y")
+	payload.push(cpos[1])
 	return payload
 }
  

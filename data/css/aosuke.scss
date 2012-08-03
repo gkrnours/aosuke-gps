@@ -1,6 +1,7 @@
 @import "pixel";
 @import "color";
 @import "map";
+@import "form";
 
 body{
 	background-color: $darker;
@@ -120,6 +121,9 @@ header{
 				background-color: $lighter; color: $darker;
 				border-right: 1px solid $light;
 			}
+		}
+		hr{
+			border: 1px solid $lighter;
 		}
 	}
 }

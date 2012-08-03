@@ -52,12 +52,20 @@ function setupMap(req, step, map){
 	}
 }
 
+this.loadMe = function(req, res, next){
+	tpl_val = util.mk_tpl_val(req)
+	tpl_val.select = {map: "select"}
+	if(!req.session.city || !req.session.city.cid)
+		res.redirect("/world")
+	req.id = req.session.city.cid
+	if(!req.id) return next()
+	workerMap(req, tpl_val, next)
+}
+
 this.load = function(req, res, next){
 	tpl_val = util.mk_tpl_val(req)
+	tpl_val.select = {wld: "select"}
 	req.id = req.params.id 
-	if(!req.id && req.session.city && req.session.city.cid)
-		req.id = req.session.city.cid
-	// if no req.id at this point, go to generic
 	if(!req.id) return next()
 	workerMap(req, tpl_val, next)
 }
@@ -66,5 +74,15 @@ this.render =  function(req, res, next){
 	delayRender(res, req, tpl_val)
 }
 this.generic =  function(req, res, next){
+	tpl_val.select = {wld: "select"}
 	res.render("ask_map", tpl_val)
+}
+this.search = function(req, res, next){
+	cid = req.body.cid
+	r.get(cid+":city:x", function(err, rep){
+		if(rep == null)
+			res.redirect("/world")
+		else
+			res.redirect("/world/"+cid)
+	})
 }

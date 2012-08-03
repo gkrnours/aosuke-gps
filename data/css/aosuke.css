@@ -48,6 +48,27 @@ x {
 c {
   background-color: #01a8d1; }
 
+form label {
+  display: block;
+  margin: 3px 0px; }
+form input {
+  display: block;
+  margin: 3px 15px; }
+  form input[type="text"] {
+    color: #01a8d1;
+    background-color: #004055;
+    border: 2px solid #006c91; }
+    form input[type="text"]:focus {
+      outline: 1px solid #5dd7ff; }
+  form input[type="submit"], form input[type="reset"], form input[type="button"] {
+    color: #003243;
+    background-color: #006c91;
+    border: 2px outset #01a8d1; }
+    form input[type="submit"]:hover, form input[type="submit"]:focus, form input[type="reset"]:hover, form input[type="reset"]:focus, form input[type="button"]:hover, form input[type="button"]:focus {
+      background-color: #01a8d1; }
+    form input[type="submit"]:active, form input[type="reset"]:active, form input[type="button"]:active {
+      border-style: inset; }
+
 body {
   background-color: #003243;
   border-color: #006c91;
@@ -156,3 +177,5 @@ header {
         background-color: #01a8d1;
         color: #003243;
         border-right: 1px solid #006c91; }
+    #main section hr {
+      border: 1px solid #01a8d1; }
