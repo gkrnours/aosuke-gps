@@ -36,6 +36,10 @@ this.process = function(flux){
 	payload.push(cpos[0])
 	payload.push(city.id+":city:y")
 	payload.push(cpos[1])
+	payload.push(city.id+":city:w")
+	payload.push(fmap["@"].wid)
+	payload.push(city.id+":city:h")
+	payload.push(fmap["@"].hei)
 	return payload
 }
  

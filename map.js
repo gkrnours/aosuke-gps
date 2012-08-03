@@ -6,31 +6,34 @@ var s = require("./secret.js")
 var p = new x2js.Parser()
 var r = new redis.createClient()
 
-function workerMap(req, tpl_val, next){
-	req._cellDone = 0
-	tpl_val.map = setupMap(req, 0, [])
-	return next()
-}
 function delayRender(res, req, tpl_val){
-	if(req._cellDone == req.session.city.w*req.session.city.h)
+	if(req.city && req._cellDone == req.city.size)
 		res.render("map", tpl_val)
 	else
 		setTimeout(delayRender, 10, res, req, tpl_val)
 }
 
+function workerMap(req, tpl_val, next){
+	req._cellDone = 0
+	r.mget([req.id+":city:w", req.id+":city:h"], function(err, rep){
+		req.city = {w: rep[0], h: rep[1], size: rep[0]*rep[1]}
+		tpl_val.map = setupMap(req, 0, [])
+	})
+	return next()
+}
 function setupMap(req, step, map){
 	if(step == 0){
 		//build map
-		for(i=0;i<req.session.city.h;++i){
+		for(i=0; i<req.city.h; ++i){
 			map[i] = []
-			for(j=0;j<req.session.city.w;++j){
+			for(j=0;j <req.city.w; ++j){
 				map[i][j] = {}
 			}
 		}
 	}
 
-	var y = step%req.session.city.w
-	var x = Math.floor(step/req.session.city.w)
+	var y = step%req.city.w
+	var x = Math.floor(step/req.city.w)
 
 	var f = ["type", "last", "tag", "danger"]
 	var payload = []
@@ -45,7 +48,7 @@ function setupMap(req, step, map){
 			map[y][x].type = "e"
 		req._cellDone += 1
 	})
-	if(++step < req.session.city.w*req.session.city.h) {
+	if(++step < req.city.size) {
 		return setupMap(req, step, map)
 	}else{
 		return map
