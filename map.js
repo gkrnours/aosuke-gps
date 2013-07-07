@@ -15,12 +15,16 @@ function delayRender(res, req, tpl_val){
 
 function workerMap(req, tpl_val, next){
 	req._cellDone = 0
+	tpl_val.city = {}
 	r.get(req.id+":city:name", function(err, rep){
 		console.log(req.id)
-		tpl_val.city = {name: rep}
+		tpl_val.city.name  = rep
 	})
-	r.mget([req.id+":city:w", req.id+":city:h"], function(err, rep){
+	r.mget([req.id+":city:w", req.id+":city:h",
+				req.id+"city:x", req.id+":city:y"], function(err, rep){
 		req.city = {w: rep[0], h: rep[1], size: rep[0]*rep[1]}
+		tpl_val.city.x = rep[2]
+		tpl_val.city.y = rep[3]
 		tpl_val.map = setupMap(req, 0, [])
 	})
 	return next()
@@ -30,6 +34,7 @@ function setupMap(req, step, map){
 		//build map
 		for(i=0; i<req.city.h; ++i){
 			map[i] = []
+			map[i].y = i
 			for(j=0;j <req.city.w; ++j){
 				map[i][j] = {}
 			}
@@ -82,7 +87,13 @@ this.render =  function(req, res, next){
 }
 this.generic =  function(req, res, next){
 	tpl_val.select = {wld: "select"}
-	res.render("ask_map", tpl_val)
+	res.render("world", tpl_val)
+}
+this.gather = function(req, res, next){
+	r.keys("*:city:x", function(err, rep){
+		console.log(rep)
+		next()
+	})
 }
 this.search = function(req, res, next){
 	cid = req.body.cid

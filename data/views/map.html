@@ -3,8 +3,10 @@
 {% block main %}
 			<h2>{{city.name}}</h2>
 			<map>
+
 				{% for row in map %}
-				<r>{%for c in row%}<{{c.type}}></{{c.type}}>{%endfor%}</r>
+				<r><h>{{row.y}}</h>
+				{%for c in row%}<{{c.type}}></{{c.type}}>{%endfor%}</r>
 				{%endfor%}
 			</map>
 
