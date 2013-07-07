@@ -91,6 +91,7 @@ this.generic =  function(req, res, next){
 }
 this.gather = function(req, res, next){
 	r.keys("*:city:x", function(err, rep){
+		req.city_keys = rep
 		console.log(rep)
 		next()
 	})
