@@ -87,6 +87,7 @@ this.render =  function(req, res, next){
 }
 this.generic =  function(req, res, next){
 	tpl_val.select = {wld: "select"}
+	tpl_val.keys = req.city_keys
 	res.render("world", tpl_val)
 }
 this.gather = function(req, res, next){
