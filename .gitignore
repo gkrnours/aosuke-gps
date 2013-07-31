@@ -4,3 +4,4 @@
 .nodemonignore
 .sass*
 *.swp
+node_modules

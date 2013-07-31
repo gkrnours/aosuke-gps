@@ -13,5 +13,6 @@ this.gotcha = function(err, req, res, next){
 this.generic = function(err, req, res, next){
 	tpl_val = util.mk_tpl_val(req)
 	tpl_val.err = err
+	console.log(err)
 	res.render("error", tpl_val)
 }
