@@ -4,7 +4,7 @@ var redis = require("redis")
 var util = require("./util.js")
 var s = require("./secret.js")
 var p = new x2js.Parser()
-var r = new redis.createClient()
+//var r = new redis.createClient()
 
 function delayRender(res, req, tpl_val){
 	if(req.city && req._cellDone == req.city.size)
