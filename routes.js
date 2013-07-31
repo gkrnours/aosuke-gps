@@ -9,6 +9,7 @@ this.err = require("./error.js")
 
 this.setup = function setup(app){
 	app.post("/log", main.log.digest, main.log.xml, main.log.reg)
+	app.post("/login/post", main.log.digest, main.log.xml, main.log.reg)
 
 	app.get("/", main.home)
 	app.get("/map", map.loadMe, map.render, map.generic)

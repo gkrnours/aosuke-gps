@@ -4,7 +4,8 @@ var redis = require("redis")
 var util = require("./util.js")
 var s = require("./secret.js")
 var p = new x2js.Parser()
-var r = new redis.createClient()
+var r = new redis.createClient(process.env.RSPORT || 6379)
+	  r.auth(process.env.RSAUTH || "")
 
 this.home = function(req, res){
 	tpl_val = util.mk_tpl_val(req)
