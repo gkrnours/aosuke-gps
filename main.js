@@ -8,7 +8,7 @@ var r
 try{
 	r = new redis.createClient(process.env.RSPORT || 6379)
 	r.auth(process.env.RSAUTH || "")
-} exception(e){
+} catch(e){
 	console.warn(e)
 }
 
