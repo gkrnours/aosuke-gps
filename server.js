@@ -4,7 +4,7 @@
 
 var express = require("express")
 var template= require("consolidate")
-var rsStore = require("connect-redis")(express)
+//var rsStore = require("connect-redis")(express)
 var routes  = require("./routes.js")
 var http = require("http")
 
