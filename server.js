@@ -29,8 +29,7 @@ app.configure(function(){
 	app.use(express.methodOverride());
 	app.use(express.cookieParser("cherry pie"));
 	console.log("rsStore: "+nv.RSPORT+":"+nv.RSAUTH)
-	app.use(express.session({store: new rsStore({host:nv.RSPORT,pass:nv.RSAUTH}),
-	          secret:"cherry pie", cookie: {maxAge: 180*1000}}));
+	app.use(express.session(secret:"cherry pie", cookie: {maxAge: 180*1000}}));
 	app.use(app.router);
 	app.use(routes.err.gotcha) // check if the error is known
 	app.use(routes.err.generic)// throw pretty error at the user
