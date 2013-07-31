@@ -10,6 +10,7 @@ var http = require("http")
 
 var app = express()
 var views_dir = __dirname+"/data/views"
+var nv = process.env
 
 app.configure(function(){
 	require("swig").init({cache: false, root: views_dir})
@@ -27,8 +28,8 @@ app.configure(function(){
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
 	app.use(express.cookieParser("cherry pie"));
-	app.use(express.session({store: new rsStore(), secret:"cherry pie",
-								cookie: {maxAge: 180*1000}}));
+	app.use(express.session({store: new rsStore({host:nv.RSPORT,pass:nv.RSPASS}),
+	          secret:"cherry pie", cookie: {maxAge: 180*1000}}));
 	app.use(app.router);
 	app.use(routes.err.gotcha) // check if the error is known
 	app.use(routes.err.generic)// throw pretty error at the user
@@ -40,6 +41,6 @@ app.configure('development', function(){
 
 routes.setup(app)
 
-http.createServer(app).listen(process.env["port"] || 3000, function() {
+http.createServer(app).listen(nv["port"] || 3000, function() {
 	console.log("Express server listening on port " + app.get('port'));
 });
