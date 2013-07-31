@@ -28,6 +28,7 @@ app.configure(function(){
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
 	app.use(express.cookieParser("cherry pie"));
+	console.log("rsStore: "+nv.RSPORT+":"+nv.RSAUTH)
 	app.use(express.session({store: new rsStore({host:nv.RSPORT,pass:nv.RSAUTH}),
 	          secret:"cherry pie", cookie: {maxAge: 180*1000}}));
 	app.use(app.router);
