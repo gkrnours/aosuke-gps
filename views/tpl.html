@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<aside class="left">
-			<img src="/img/battery_charging.gif" />
+			<img src="/img/battery_0.gif" />
 			<span>{{me.name}}</span>
 		</aside>
 		<aside class="right">
@@ -25,9 +25,12 @@
 
 	<div id="main">
 		<aside id="menu">
-			<a class="{{select.map}}" href="/map"><img src="/img/map.gif" /></a>
-			<a class="{{select.wld}}" href="/world"><img src="/img/world.gif" /></a>
-			<a class="{{select.ppl}}" href="/people"><img src="/img/ppl.gif" /></a>
+			<a class="{{select.map}}" href="/map" title="">
+				<img src="/img/map.gif"></a>
+			<a class="{{select.wld}}" href="/world">
+				<img src="/img/world.gif"></a>
+			<a class="{{select.ppl}}" href="/people">
+				<img src="/img/ppl.gif"></a>
 		</aside>
 		<section>{%if error%}
 		<p class="error">{{error}}</p>

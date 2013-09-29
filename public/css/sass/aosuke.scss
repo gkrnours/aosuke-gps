@@ -21,15 +21,18 @@ a img{
 header{
 	border-bottom: 1px solid $light;
 	aside{
-		font-size: 8px; line-height: 8px;
-		margin: 6px 5px;
+		font-size: 16px;
+		img{
+			padding: 12px 8px;
+		}
 		span{
-			position: relative;
-				bottom: 3px;
+			display: inline-block;
+			vertical-align: top;
+			line-height: 48px;
 		}
 	}
 	#bann{
-		width: 120px; height: 24px;
+		width: 240px; height: 48px;
 		margin: auto;
 		display: block;
 	}
@@ -38,17 +41,18 @@ header{
 	border-bottom: 1px solid $light;
 	margin: 0px; 
 	aside#menu{
-		width: 30px;
+		width: 50px;
 		margin: 0px;
 		a{
-			-webkit-transition: border-color ease 400ms;
+			-webkit-transition: border-color ease 0ms;
 			float: left;
-			margin: 5px 0px 0px 5px; padding: 4px;
+			margin: 5px 0px 2px 5px; padding: 6px;
 			line-height: 11px;
 			outline: 1px solid $light;
 			border: 1px solid $dark; 
 			background-color: $dark;
 			&:hover {
+				-webkit-transition: border-color ease 600ms;
 				border-color: $neon;
 			}
 			&.select {
@@ -59,13 +63,13 @@ header{
 	}
 	section{
 		min-height: 87px;
-		margin-left: 35px; padding: 1px 5px 10px 5px;
+		margin-left: 56px; padding: 1px 5px 10px 5px;
 		border-left: 1px solid $light;
 		background-color: $dark;
 		h2 {
 			margin: 5px 0px; padding: 0px 10px 7px 10px;
 			border-bottom: 1px dashed #006C91;
-			font-size: 24px; line-height: 24px;
+			font-size: 32px; line-height: 32px;
 			background-color: #003242;
 		}
 		p, pre, form {
