@@ -8,7 +8,7 @@
 	<link rel="StyleSheet" href="/css/aosuke.css"/>
 	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon"/>
 </head>
-<body>
+<body ontouchstart="">
 	<header>
 		<aside class="left">
 			<img src="/img/battery_0.gif" />
@@ -25,11 +25,18 @@
 
 	<div id="main">
 		<aside id="menu">
-			<a class="{{select.map}}" href="/map" title="">
+            {%if logged%}
+			<a class="{{select.cnt}}" href="/logout" title="Déconnexion">
+				<img src="/img/logout.gif"></a>
+            {%else%}
+			<a class="{{select.cnt}}" href="/login" title="Connexion">
+				<img src="/img/login.gif"></a>
+            {%endif%}
+			<a class="{{select.map}}" href="/map" title="Votre ville">
 				<img src="/img/map.gif"></a>
-			<a class="{{select.wld}}" href="/world">
+			<a class="{{select.wld}}" href="/world" title="Autre ville">
 				<img src="/img/world.gif"></a>
-			<a class="{{select.ppl}}" href="/people">
+			<a class="{{select.ppl}}" href="/people" title="Profile joueur">
 				<img src="/img/ppl.gif"></a>
 		</aside>
 		<section>{%if error%}

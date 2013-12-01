@@ -4,12 +4,17 @@
  */
 
 var main = require("./main.js")
+var auth = require("./auth.js")
 //var map  = require("./map.js")
 this.err = require("./error.js")
 
 this.setup = function setup(app){
-	app.post("/log", main.log.digest, main.log.xml, main.log.reg)
-	app.post("/login/post", main.log.digest, main.log.xml, main.log.reg)
+	app.get("/login",  auth.go)
+	app.get("/logout", auth.out)
+	app.get("/back",   auth.back, auth.parse, function(req, res){
+        res.redirect("/")
+
+    })
 
 	app.get("/", main.home)
 //	app.get("/map", map.loadMe, map.render, map.generic)

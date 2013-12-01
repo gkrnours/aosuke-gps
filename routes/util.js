@@ -50,8 +50,10 @@ this.mk_tpl_val = function mk_tpl_val(req){
 	tpl_val = {} 
 	tpl_val.now = Date()
 	if(req && req.session) {
-		if(req.session.me)
+		if(req.session.me) {
 			tpl_val.me = req.session.me
+			tpl_val.logged = true
+        }
 		else
 			tpl_val.me = {name: "Invité"}
 		if(req.session.city)

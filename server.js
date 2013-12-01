@@ -6,8 +6,7 @@ var express = require('express')
 var swig    = require('swig')
 var http    = require('http')
 var path    = require('path')
-var rsStore = require('connect-redis')(express)
-var routes  = require("./routes.js")
+var routes  = require("./routes")
 
 var app = express()
 var nv = process.env
@@ -19,7 +18,7 @@ app.set('view cache', false)
 swig.setDefaults({cache: false})
 app.set('port', nv.PORT || 8080)
 app.use(express.favicon("public/img/favicon.ico"));
-app.use(express.logger('dev'));
+//app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser("cherry pie"));
