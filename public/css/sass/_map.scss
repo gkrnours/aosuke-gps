@@ -3,7 +3,7 @@ map{
 	font-size: 8px; text-align: center;
 	border-collapse: collapse;
 }
-r{
+r{ // row
 	display: table-row;
 }
 e, v, t, x, c, h{
@@ -11,24 +11,24 @@ e, v, t, x, c, h{
 	width: 16px; height: 16px;
 	border: 1px solid $light;
 }
-h{
+h{ // 
 	border: none;
 }
-e{
+e{ // empty
 	background-color: $darker;
 	background-image: url("/img/bg_unknown.gif");
 }
-v{
+v{ // visited
 	background-color: $darker;
 	background-image: url("/img/bg_visited.gif");
 }
-t{
+t{ //
 	background-color: $dark;
 }
-x{
+x{ // 
 	background-color: $light;
 }
-c{
+c{ // city
 	background-color: $lighter;
 }
 
