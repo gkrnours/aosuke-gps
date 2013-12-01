@@ -25,8 +25,8 @@ app.use(express.cookieParser("cherry pie"));
 app.use(express.session({secret:"cherry pie", cookie: {maxAge: 180*1000}}));
 app.use(app.router);
 app.use(express.static(path.join(__dirname + '/public')));
-app.use(routes.err.gotcha) // check if the error is known
-app.use(routes.err.generic)// throw pretty error at the user
+//app.use(routes.err.gotcha) // check if the error is known
+//app.use(routes.err.generic)// throw pretty error at the user
 
 routes.setup(app)
 
