@@ -16,7 +16,8 @@ app.set('views', __dirname + "/views")
 app.set('view engine', "html")
 app.set('view cache', false)
 swig.setDefaults({cache: false})
-app.set('port', nv.PORT || 8080)
+app.set('port', nv.OPENSHIFT_NODEJS_PORT || 8080)
+app.set('ip',   nv.OPENSHIFT_NODEJS_IP   || null)
 app.use(express.favicon("public/img/favicon.ico"));
 //app.use(express.logger('dev'));
 app.use(express.bodyParser());
@@ -30,6 +31,7 @@ app.use(routes.err.generic)// throw pretty error at the user
 
 routes.setup(app)
 
-http.createServer(app).listen(app.get('port'), function() {
+http.createServer(app).listen(app.get('port'), app.get('ip'), function() {
 	console.log("Express server listening on port " + app.get('port'));
 });
+
