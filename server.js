@@ -6,7 +6,7 @@ var express = require('express')
 var swig    = require('swig')
 var http    = require('http')
 var path    = require('path')
-var routes  = require("./routes")
+var routes  = require("./routes/index.js")
 
 var app = express()
 var nv = process.env
