@@ -15,6 +15,5 @@ this.generic = function(err, req, res, next){
 	tpl_val.err = err
 	console.log("### [ERROR ###")
 	console.log(err)
-	console.log("### ERROR] ###")
 	res.render("error", tpl_val)
 }
