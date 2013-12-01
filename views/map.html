@@ -15,7 +15,7 @@
                         elif c.city -%}c{%-
                         elif c.building -%}x{%-
                         else-%}v{%-endif%} 
-                            data-items="{{c.items|json}}"></{%
+                            data-items="{{c.items|json(0)}}"></{%
                         if c.z == "-1" -%}e{%-
                         elif c.city -%}c{%-
                         elif c.building -%}x{%-

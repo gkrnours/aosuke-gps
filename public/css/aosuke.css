@@ -31,6 +31,14 @@ e, v, t, x, c, h {
   height: 16px;
   border: 1px solid #006c91;
 }
+e:hover::after, v:hover::after, t:hover::after, x:hover::after, c:hover::after, h:hover::after {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+  content: attr(data-items);
+  background: #004055;
+  border: 1px solid #006c91;
+}
 
 h {
   border: none;
