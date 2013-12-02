@@ -1,11 +1,13 @@
 {% extends "tpl.html" %}
 
 {% block head %}
+    <script src="/js/prototype.js"></script>
+    <script src="/js/map.js"></script>
 {% endblock %}
 
 {% block main %}
 			<h2>{{city.name}}</h2>
-			<map>
+			<map id="map">
 				{% for row in map %}
                 {%if loop.first%}
                     <r><h></h>{%for c in row%}

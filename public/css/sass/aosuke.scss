@@ -58,7 +58,7 @@ header{
 			}
 			&.select {
 				border-color: $neon;
-				background-color: #006C91;
+				background-color: $light;
 			}
 			&::after{
 				position: absolute;
@@ -68,9 +68,12 @@ header{
 				content: attr(title);
 				background: $darker; color: $lighter;
 				border: 1px solid $dark; border-left: none;
-				box-shadow: 0px 1px 0 $light, 1px 0 0 $light, 0px -1px 0 $light;;
+				box-shadow: 0px 1px 0 $light, 1px 0 0 $light, 0px -1px 0 $light;
 				overflow: hidden; text-overflow: clip; white-space: nowrap;
 			}
+            &.select::after{
+                border-color: $neon;
+            }
 			&:hover::after, &:active::after{
 				max-width: 150px; padding: 0 8px;
 				border-color: $neon;
@@ -84,11 +87,17 @@ header{
 		border-left: 1px solid $light;
 		background-color: $dark;
 		h2 {
-			margin: 5px 0px; padding: 0px 10px 7px 10px;
+			margin: 10px 0px 5px; padding: 0px 10px 7px 10px;
 			border-bottom: 1px dashed $light;
 			font-size: 32px; line-height: 32px;
 			background-color: $darker;
 		}
+		h3 {
+			margin: 10px 0px 5px; padding: 0px 10px 4px 10px;
+			border-bottom: 1px dashed $light;
+			font-size: 24px; line-height: 24px;
+			background-color: $darker;
+        }
 		p, pre, form {
 			padding: 3px 7px;
 			border: 1px solid $light;
@@ -111,6 +120,7 @@ header{
 			padding: 15px 7px;
 		}
 		ul {
+            margin: 0px 0px 5px;
 			list-style: none; padding: 0px;
 			border-left: 1px solid $light;
 			border-bottom: 1px solid $light;

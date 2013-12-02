@@ -10,12 +10,14 @@ e, v, t, x, c, h{
 	display: table-cell;
 	width: 16px; height: 16px;
 	border: 1px solid $light;
-    &:hover::after{
+    /*&:hover::after*/
+    .tooltip{
         position: absolute;
-        margin-top: 20px; margin-left: 20px;
-        content: attr(data-items);
+        margin-top: 20px; margin-left: 20px; padding: 2px 10px;
+        //content: attr(data-items);
         background: $dark;
         border: 1px solid $light;
+        font-size: 12px;
         white-space: pre-wrap;
     }
 }

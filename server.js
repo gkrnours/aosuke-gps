@@ -18,6 +18,7 @@ app.set('view cache', false)
 swig.setDefaults({cache: false})
 app.set('port', nv.OPENSHIFT_NODEJS_PORT || 8080)
 app.set('ip',   nv.OPENSHIFT_NODEJS_IP   || null)
+
 app.use(express.favicon("public/img/favicon.ico"));
 //app.use(express.logger('dev'));
 app.use(express.bodyParser());
