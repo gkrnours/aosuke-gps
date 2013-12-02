@@ -85,9 +85,9 @@ header{
 		background-color: $dark;
 		h2 {
 			margin: 5px 0px; padding: 0px 10px 7px 10px;
-			border-bottom: 1px dashed #006C91;
+			border-bottom: 1px dashed $light;
 			font-size: 32px; line-height: 32px;
-			background-color: #003242;
+			background-color: $darker;
 		}
 		p, pre, form {
 			padding: 3px 7px;

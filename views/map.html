@@ -1,5 +1,8 @@
 {% extends "tpl.html" %}
 
+{% block head %}
+{% endblock %}
+
 {% block main %}
 			<h2>{{city.name}}</h2>
 			<map>
@@ -9,13 +12,14 @@
                         <h>{{loop.index0 - city.x}}</h>
                     {%endfor%}</r>
                 {%endif%}
-				<r><h>{{loop.index0 - city.y}}</h>
+				<r><h>{{city.y - loop.index0}}</h>
                     {%for c in row%}
                         <{% if c.z == "-1" -%}e{%-
                         elif c.city -%}c{%-
                         elif c.building -%}x{%-
-                        else-%}v{%-endif%} 
-                            data-items="{{c.items|json(0)}}"></{%
+                        else-%}v{%-endif-%} 
+                        {%if c.items%} 
+                        data-items="{{c.items|json(0)}}"{%-endif%}></{%
                         if c.z == "-1" -%}e{%-
                         elif c.city -%}c{%-
                         elif c.building -%}x{%-

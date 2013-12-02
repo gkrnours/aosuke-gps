@@ -16,6 +16,7 @@ e, v, t, x, c, h{
         content: attr(data-items);
         background: $dark;
         border: 1px solid $light;
+        white-space: pre-wrap;
     }
 }
 h{ // 
@@ -33,7 +34,7 @@ t{ //
 	background-color: $dark;
 }
 x{ // 
-	background-color: $light;
+	background-color: $darker;
 }
 c{ // city
 	background-color: $lighter;

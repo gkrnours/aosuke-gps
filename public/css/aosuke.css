@@ -7,13 +7,6 @@
   font-style: normal;
 }
 
-/*
-5dd7ff
-01A8D1
-006C91
-004055
-003242
-*/
 map {
   display: table;
   font-size: 8px;
@@ -38,6 +31,7 @@ e:hover::after, v:hover::after, t:hover::after, x:hover::after, c:hover::after, 
   content: attr(data-items);
   background: #004055;
   border: 1px solid #006c91;
+  white-space: pre-wrap;
 }
 
 h {
@@ -59,7 +53,7 @@ t {
 }
 
 x {
-  background-color: #006c91;
+  background-color: #003243;
 }
 
 c {
@@ -198,10 +192,10 @@ header #bann {
 #main section h2 {
   margin: 5px 0px;
   padding: 0px 10px 7px 10px;
-  border-bottom: 1px dashed #006C91;
+  border-bottom: 1px dashed #006c91;
   font-size: 32px;
   line-height: 32px;
-  background-color: #003242;
+  background-color: #003243;
 }
 #main section p, #main section pre, #main section form {
   padding: 3px 7px;
