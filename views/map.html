@@ -27,6 +27,15 @@
                     {%endfor%}</r>
 				{%endfor%}
 			</map>
+            {%for cat,items in comp%}
+                <h3>{{cat}}</h3>
+                <ul>{%for item in items%}
+                    <li>{{item.count}}× {{item.name}}
+                    {%if item.broken%}<em>Cassé</em>{%endif%}
+                    [{{item.x}}/{{item.y}}]
+                    </li>
+                {%endfor%}</ul>
+            {%endfor%}
 
 
 {% endblock main %}
