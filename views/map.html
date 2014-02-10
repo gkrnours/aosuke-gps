@@ -10,23 +10,30 @@
 			<map id="map">
 				{% for row in map %}
                 {%if loop.first%}
-                    <r><h></h>{%for c in row%}
+                    <tr><h></h>{%for c in row%}
                         <h>{{loop.index0 - city.x}}</h>
-                    {%endfor%}</r>
+                    {%endfor%}</tr>
                 {%endif%}
 				<r><h>{{city.y - loop.index0}}</h>
-                    {%for c in row%}
+                    {%for c in row -%}
                         <{% if c.z == "-1" -%}e{%-
                         elif c.city -%}c{%-
                         elif c.building -%}x{%-
+                        elif c.dried -%}d{%-
                         else-%}v{%-endif-%} 
-                        {%if c.items%} 
+                        {%- if c.items %} 
                         data-items="{{c.items|json(0)}}"{%-endif%}></{%
                         if c.z == "-1" -%}e{%-
                         elif c.city -%}c{%-
                         elif c.building -%}x{%-
+                        elif c.dried -%}d{%-
                         else-%}v{%-endif%}>
-                    {%endfor%}</r>
+                    {% endfor%}<h>{{city.y - loop.index0}}</h></r>
+                {%if loop.last%}
+                    <tr><h></h>{%for c in row%}
+                        <h>{{loop.index0 - city.x}}</h>
+                    {%endfor%}</tr>
+                {%endif%}
 				{%endfor%}
 			</map>
             {%for cat,items in comp%}
@@ -34,7 +41,7 @@
                 <ul>{%for item in items%}
                     <li>{{item.count}}× {{item.name}}
                     {%if item.broken%}<em>Cassé</em>{%endif%}
-                    [{{item.x}}/{{item.y}}]
+                    [{{city.x-item.x}}/{{city.y-item.y}}]
                     </li>
                 {%endfor%}</ul>
             {%endfor%}

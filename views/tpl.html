@@ -27,17 +27,17 @@
 	<div id="main">
 		<aside id="menu">
             {%if logged%}
-			<a class="{{select.cnt}}" href="/logout" title="Déconnexion">
+			<a class="{{select.cnt}}" href="/logout" data-title="Déconnexion">
 				<img src="/img/logout.gif"></a>
             {%else%}
-			<a class="{{select.cnt}}" href="/login" title="Connexion">
+			<a class="{{select.cnt}}" href="/login" data-title="Connexion">
 				<img src="/img/login.gif"></a>
             {%endif%}
-			<a class="{{select.map}}" href="/map" title="Votre ville">
+			<a class="{{select.map}}" href="/map" data-title="Votre ville">
 				<img src="/img/map.gif"></a>
-			<a class="{{select.wld}}" href="/world" title="Autre ville">
+			<a class="{{select.wld}}" href="/world" data-title="Autre ville">
 				<img src="/img/world.gif"></a>
-			<a class="{{select.ppl}}" href="/people" title="Profile joueur">
+			<a class="{{select.ppl}}" href="/people" data-title="Profile joueur">
 				<img src="/img/ppl.gif"></a>
 		</aside>
 		<section>{%if error%}

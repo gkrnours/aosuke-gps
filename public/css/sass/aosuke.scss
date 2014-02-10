@@ -65,11 +65,12 @@ header{
 					left: 100%;
 				height: 32px; width: auto; line-height: 32px; max-width: 0px;
 				padding-left: 0px;
-				content: attr(title);
+				content: attr(data-title);
 				background: $darker; color: $lighter;
 				border: 1px solid $dark; border-left: none;
 				box-shadow: 0px 1px 0 $light, 1px 0 0 $light, 0px -1px 0 $light;
 				overflow: hidden; text-overflow: clip; white-space: nowrap;
+                z-index: 900;
 			}
             &.select::after{
                 border-color: $neon;

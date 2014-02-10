@@ -5,30 +5,42 @@ map{
 }
 r{ // row
 	display: table-row;
+    &:hover{
+        background-color: $darker;
+    }
 }
-e, v, t, x, c, h{
+e, v, t, x, c, h, d{
 	display: table-cell;
 	width: 24px; height: 24px;
 	border: 1px solid $light;
-    /*&:hover::after*/
+    position: relative;
     .tooltip{
         position: absolute;
         margin-top: 24px; margin-left: 24px; padding: 4px 10px;
         //content: attr(data-items);
         background: $dark;
+        background-origin: border-box;
         border: 1px solid $light;
         font-size: 16px;
         white-space: pre-wrap;
+        z-index: 2;
+    }
+    &:hover{
+        background-color: $dark;
     }
 }
 h{ // 
 	border: none;
 }
 e{ // empty
+	border: none;
 	background-color: $darker;
-	background-image: url("/img/bg_unknown.gif");
 }
 v{ // visited
+	background-color: $darker;
+    background-image: url("/img/bg_unknown.gif");
+}
+d{ // dried
 	background-color: $darker;
 	background-image: url("/img/bg_visited.gif");
 }

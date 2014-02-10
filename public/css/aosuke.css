@@ -17,23 +17,31 @@ map {
 r {
   display: table-row;
 }
+r:hover {
+  background-color: #003243;
+}
 
-e, v, t, x, c, h {
+e, v, t, x, c, h, d {
   display: table-cell;
   width: 24px;
   height: 24px;
   border: 1px solid #006c91;
-  /*&:hover::after*/
+  position: relative;
 }
-e .tooltip, v .tooltip, t .tooltip, x .tooltip, c .tooltip, h .tooltip {
+e .tooltip, v .tooltip, t .tooltip, x .tooltip, c .tooltip, h .tooltip, d .tooltip {
   position: absolute;
   margin-top: 24px;
   margin-left: 24px;
   padding: 4px 10px;
   background: #004055;
+  background-origin: border-box;
   border: 1px solid #006c91;
   font-size: 16px;
   white-space: pre-wrap;
+  z-index: 2;
+}
+e:hover, v:hover, t:hover, x:hover, c:hover, h:hover, d:hover {
+  background-color: #004055;
 }
 
 h {
@@ -41,11 +49,16 @@ h {
 }
 
 e {
+  border: none;
+  background-color: #003243;
+}
+
+v {
   background-color: #003243;
   background-image: url("/img/bg_unknown.gif");
 }
 
-v {
+d {
   background-color: #003243;
   background-image: url("/img/bg_visited.gif");
 }
@@ -168,7 +181,7 @@ header #bann {
   line-height: 32px;
   max-width: 0px;
   padding-left: 0px;
-  content: attr(title);
+  content: attr(data-title);
   background: #003243;
   color: #01a8d1;
   border: 1px solid #004055;
@@ -177,6 +190,7 @@ header #bann {
   overflow: hidden;
   text-overflow: clip;
   white-space: nowrap;
+  z-index: 900;
 }
 #main aside#menu a.select::after {
   border-color: #5dd7ff;
