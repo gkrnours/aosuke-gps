@@ -16,18 +16,7 @@
                 {%endif%}
 				<r><h>{{city.y - loop.index0}}</h>
                     {%for c in row -%}
-                        <{% if c.z == "-1" -%}e{%-
-                        elif c.city -%}c{%-
-                        elif c.building -%}x{%-
-                        elif c.dried -%}d{%-
-                        else-%}v{%-endif-%} 
-                        {%- if c.items %} 
-                        data-items="{{c.items|json(0)}}"{%-endif%}></{%
-                        if c.z == "-1" -%}e{%-
-                        elif c.city -%}c{%-
-                        elif c.building -%}x{%-
-                        elif c.dried -%}d{%-
-                        else-%}v{%-endif%}>
+                        {{c|cell}}
                     {% endfor%}<h>{{city.y - loop.index0}}</h></r>
                 {%if loop.last%}
                     <tr><h></h>{%for c in row%}
@@ -39,10 +28,12 @@
             {%for cat,items in comp%}
                 <h3>{{cat}}</h3>
                 <ul>{%for item in items%}
+                    {% if item.x != city.x or item.y != city.y %}
                     <li>{{item.count}}× {{item.name}}
                     {%if item.broken%}<em>Cassé</em>{%endif%}
-                    [{{city.x-item.x}}/{{city.y-item.y}}]
+                    [{{item.x-city.x}}/{{city.y-item.y}}]
                     </li>
+                    {% endif %}
                 {%endfor%}</ul>
             {%endfor%}
 

@@ -1,56 +1,74 @@
-map{
-	display: table;
-	font-size: 16px; text-align: center;
-	border-collapse: collapse;
-}
-r{ // row
-	display: table-row;
-    &:hover{
+#main{ 
+    map{
+        display: table;
+        font-size: 16px; text-align: center;
+        border-collapse: collapse;
+    }
+    r{ // row
+        display: table-row;
+        &:hover{
+            background-color: $darker;
+        }
+    }
+    e, v, t, x, c, h, d{
+        display: table-cell;
+        width: 24px; height: 24px;
+        border: 1px solid $light;
+        position: relative;
+        .tooltip{
+            width: 74px;
+            position: absolute;
+            background: $dark;
+            border: 1px solid $lighter;
+            margin-top: 24px; margin-left: 24px;
+            overflow: hidden;
+            z-index: 2;
+            h4{
+                margin: 0px 0px 3px;
+            }
+            p{
+                width: 300px;
+                margin: 0; padding: 0px 3px;
+                border: none;
+                background: $dark;
+                font-size: 8px; 
+                font-family: monospace;
+            }
+        }
+        &:hover{
+            background-color: $dark;
+            border-color: $lighter;
+        }
+    }
+    h{ // 
+        border: none;
+    }
+    e{ // empty
+        border: none;
         background-color: $darker;
     }
-}
-e, v, t, x, c, h, d{
-	display: table-cell;
-	width: 24px; height: 24px;
-	border: 1px solid $light;
-    position: relative;
-    .tooltip{
-        position: absolute;
-        margin-top: 24px; margin-left: 24px; padding: 4px 10px;
-        //content: attr(data-items);
-        background: $dark;
-        background-origin: border-box;
-        border: 1px solid $light;
-        font-size: 16px;
-        white-space: pre-wrap;
-        z-index: 2;
+    v{ // visited
+        background-color: $darker;
+        background-image: url("/img/bg_unknown.gif");
     }
-    &:hover{
+    d{ // dried
+        background-color: $darker;
+        background-image: url("/img/bg_visited.gif");
+    }
+    t{ //
         background-color: $dark;
+        &:hover{
+            background-color: $light;
+        }
+    }
+    x{ // 
+        background-color: $darker;
+    }
+    c{ // city
+        background-color: $lighter;
+        &:hover{
+            background-color: $neon;
+            border-color: $neon;
+        }
     }
 }
-h{ // 
-	border: none;
-}
-e{ // empty
-	border: none;
-	background-color: $darker;
-}
-v{ // visited
-	background-color: $darker;
-    background-image: url("/img/bg_unknown.gif");
-}
-d{ // dried
-	background-color: $darker;
-	background-image: url("/img/bg_visited.gif");
-}
-t{ //
-	background-color: $dark;
-}
-x{ // 
-	background-color: $darker;
-}
-c{ // city
-	background-color: $lighter;
-}
-

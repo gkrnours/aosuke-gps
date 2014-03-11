@@ -7,72 +7,81 @@
   font-style: normal;
 }
 
-map {
+#main map {
   display: table;
   font-size: 16px;
   text-align: center;
   border-collapse: collapse;
 }
-
-r {
+#main r {
   display: table-row;
 }
-r:hover {
+#main r:hover {
   background-color: #003243;
 }
-
-e, v, t, x, c, h, d {
+#main e, #main v, #main t, #main x, #main c, #main h, #main d {
   display: table-cell;
   width: 24px;
   height: 24px;
   border: 1px solid #006c91;
   position: relative;
 }
-e .tooltip, v .tooltip, t .tooltip, x .tooltip, c .tooltip, h .tooltip, d .tooltip {
+#main e .tooltip, #main v .tooltip, #main t .tooltip, #main x .tooltip, #main c .tooltip, #main h .tooltip, #main d .tooltip {
+  width: 74px;
   position: absolute;
+  background: #004055;
+  border: 1px solid #01a8d1;
   margin-top: 24px;
   margin-left: 24px;
-  padding: 4px 10px;
-  background: #004055;
-  background-origin: border-box;
-  border: 1px solid #006c91;
-  font-size: 16px;
-  white-space: pre-wrap;
+  overflow: hidden;
   z-index: 2;
 }
-e:hover, v:hover, t:hover, x:hover, c:hover, h:hover, d:hover {
-  background-color: #004055;
+#main e .tooltip h4, #main v .tooltip h4, #main t .tooltip h4, #main x .tooltip h4, #main c .tooltip h4, #main h .tooltip h4, #main d .tooltip h4 {
+  margin: 0px 0px 3px;
 }
-
-h {
+#main e .tooltip p, #main v .tooltip p, #main t .tooltip p, #main x .tooltip p, #main c .tooltip p, #main h .tooltip p, #main d .tooltip p {
+  width: 300px;
+  margin: 0;
+  padding: 0px 3px;
+  border: none;
+  background: #004055;
+  font-size: 8px;
+  font-family: monospace;
+}
+#main e:hover, #main v:hover, #main t:hover, #main x:hover, #main c:hover, #main h:hover, #main d:hover {
+  background-color: #004055;
+  border-color: #01a8d1;
+}
+#main h {
   border: none;
 }
-
-e {
+#main e {
   border: none;
   background-color: #003243;
 }
-
-v {
+#main v {
   background-color: #003243;
   background-image: url("/img/bg_unknown.gif");
 }
-
-d {
+#main d {
   background-color: #003243;
   background-image: url("/img/bg_visited.gif");
 }
-
-t {
+#main t {
   background-color: #004055;
 }
-
-x {
+#main t:hover {
+  background-color: #006c91;
+}
+#main x {
   background-color: #003243;
 }
-
-c {
+#main c {
   background-color: #01a8d1;
+}
+#main c:hover {
+  background-color: #5dd7ff;
+  border-color: #5dd7ff;
 }
 
 form label {
@@ -208,21 +217,25 @@ header #bann {
   border-left: 1px solid #006c91;
   background-color: #004055;
 }
+#main section h1, #main section h2, #main section h3, #main section h4, #main section h5, #main section h6 {
+  border-bottom: 1px dashed #006c91;
+  background-color: #003243;
+}
 #main section h2 {
   margin: 10px 0px 5px;
   padding: 0px 10px 7px 10px;
-  border-bottom: 1px dashed #006c91;
   font-size: 32px;
   line-height: 32px;
-  background-color: #003243;
 }
 #main section h3 {
   margin: 10px 0px 5px;
   padding: 0px 10px 4px 10px;
-  border-bottom: 1px dashed #006c91;
   font-size: 24px;
   line-height: 24px;
-  background-color: #003243;
+}
+#main section h4 {
+  font-size: 16px;
+  line-height: 16px;
 }
 #main section p, #main section pre, #main section form {
   padding: 3px 7px;

@@ -87,17 +87,20 @@ header{
 		margin-left: 56px; padding: 1px 5px 10px 5px;
 		border-left: 1px solid $light;
 		background-color: $dark;
+        h1, h2, h3, h4, h5, h6{
+			border-bottom: 1px dashed $light;
+			background-color: $darker;
+        }
 		h2 {
 			margin: 10px 0px 5px; padding: 0px 10px 7px 10px;
-			border-bottom: 1px dashed $light;
 			font-size: 32px; line-height: 32px;
-			background-color: $darker;
 		}
 		h3 {
 			margin: 10px 0px 5px; padding: 0px 10px 4px 10px;
-			border-bottom: 1px dashed $light;
 			font-size: 24px; line-height: 24px;
-			background-color: $darker;
+        }
+        h4 {
+			font-size: 16px; line-height: 16px;
         }
 		p, pre, form {
 			padding: 3px 7px;
